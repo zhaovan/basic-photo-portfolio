@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../../../styles/About.module.css";
+import styles from "../../styles/About.module.css";
 
-import profilePic from "../../../public/about/about_pic.jpeg";
+import profilePic from "../../public/about/about_pic.jpeg";
 
 export default function About() {
   return (

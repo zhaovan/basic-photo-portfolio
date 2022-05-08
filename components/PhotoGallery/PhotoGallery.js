@@ -3,7 +3,7 @@ import Gallery from "react-photo-gallery";
 import { useState, useCallback, useEffect } from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { filterOptions } from "./FilterOptions";
-import styles from "../../../styles/PhotoGallery.module.css";
+import styles from "../../styles/PhotoGallery.module.css";
 
 function convertTitleCase(word) {
   return word[0].toUpperCase() + word.slice(1).toLowerCase();
