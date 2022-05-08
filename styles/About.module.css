@@ -1,0 +1,34 @@
+.photo {
+  /* min-width: 20vw !important; */
+  border-radius: 10px;
+  margin-left: 5vw;
+}
+
+.text {
+  margin-left: 5vw;
+}
+
+.imageWrapper > span {
+  width: 20vw !important;
+  /* flex-grow: 1; */
+}
+
+.aboutContainer {
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .aboutContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text {
+    margin-left: 0;
+  }
+  .imageWrapper > span {
+    width: 60vw !important;
+  }
+  /* .imageWrapper {
+    margin-bottom: 20vh;
+  } */
+}

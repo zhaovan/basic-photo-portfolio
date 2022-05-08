@@ -1,0 +1,28 @@
+.header {
+  height: 10vh;
+  display: flex;
+  padding: 4vh 10vw 0;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 80vw;
+  font-family: "Nanum Pen Script";
+}
+
+.name {
+  font-size: 32px;
+}
+
+.links {
+  display: flex;
+}
+
+.linkText {
+  font-size: 24px;
+  cursor: pointer;
+  transition: 1s linear;
+  margin: 0 2vw;
+}
+
+.linkText:hover {
+  text-decoration: underline;
+}
