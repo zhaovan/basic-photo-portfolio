@@ -53,26 +53,29 @@ export default function PhotoGallery({ photos }) {
 
   return (
     <div className="container">
-      <div className={styles.filterContainer}>
+      <div>
         <h3 className={styles.filterTag}>Add a filter:</h3>
+
+        <div className={styles.filterContainer}>
+          {filterOptions.map((currFilter, i) => {
+            return (
+              <button
+                key={i}
+                className={
+                  filters.includes(currFilter)
+                    ? styles.filterButtonActive
+                    : styles.filterButton
+                }
+                onClick={() => {
+                  filter(currFilter);
+                }}
+              >
+                {convertTitleCase(currFilter)}
+              </button>
+            );
+          })}
+        </div>
       </div>
-      {filterOptions.map((currFilter, i) => {
-        return (
-          <button
-            key={i}
-            className={
-              filters.includes(currFilter)
-                ? styles.filterButtonActive
-                : styles.filterButton
-            }
-            onClick={() => {
-              filter(currFilter);
-            }}
-          >
-            {convertTitleCase(currFilter)}
-          </button>
-        );
-      })}
       <div>
         {filters.length === 0 ? (
           <>
