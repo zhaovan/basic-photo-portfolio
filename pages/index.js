@@ -13,7 +13,7 @@ export default function Home() {
       <Head>
         <title>Photo Portfolio</title>
         <meta name="description" content="Photo portfolio" />
-        <link rel="icon" href="/camera.png" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Header setPage={setPage} />
       {page === "photos" ? <PhotoGallery photos={photos} /> : <About />}
