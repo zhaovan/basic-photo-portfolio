@@ -1,5 +1,7 @@
 # NextJS Photo Portfolio
 
+![Screenshot](/public/site_ss.png)
+
 This is a Next.js project!
 
 If you're here, you're either adam (hi adam!) or you've found this through the interwebs and want to learn more! Cool! You've come to the right place
@@ -55,32 +57,13 @@ const image = {
 
 which you'll need to change the js on like 91-94 of the file in `components/PhotoGallery/PhotoGallery.js`
 
-3. Last but not least, change the `components/About` page so it's about you and upload a photo of you in `public/about` so we can see your face!
+3. For filtering, there's an array defined in `components/FilterOptions.js` which is literally just all filter options. To handle this, you need to associate each photo with a `type`. super easy
+4. Last but not least, change the `components/About` page so it's about you and upload a photo of you in `public/about` so we can see your face!
 
 and with that, all of that should work!
 
 # Dev work
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+If for some reason, you want to develop more on this, there's no real guidelines atm!
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-Nextjs is typically booted with API routes found in `pages/api` but we are not using them here because we're statically hosting images
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The only thing is run with `yarn dev` after installing all the node modules.
