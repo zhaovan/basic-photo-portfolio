@@ -2,7 +2,7 @@ import React from "react";
 import Gallery from "react-photo-gallery";
 import { useState, useCallback, useEffect } from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
-import { filterOptions } from "./FilterOptions";
+import { filterOptions } from "../FilterOptions";
 import styles from "../../styles/PhotoGallery.module.css";
 
 function convertTitleCase(word) {
@@ -54,8 +54,7 @@ export default function PhotoGallery({ photos }) {
   return (
     <div className="container">
       <div>
-        <h3 className={styles.filterTag}>Add a filter:</h3>
-
+        <h3 className={styles.filterTag}>Filter:</h3>
         <div className={styles.filterContainer}>
           {filterOptions.map((currFilter, i) => {
             return (

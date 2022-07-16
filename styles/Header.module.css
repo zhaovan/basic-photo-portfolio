@@ -5,11 +5,11 @@
   justify-content: space-between;
   align-items: center;
   min-width: 80vw;
-  font-family: "Nanum Pen Script";
+  font-family: "Sacramento", cursive;
 }
 
 .name {
-  font-size: 32px;
+  font-size: 42px;
 }
 
 .links {
@@ -17,7 +17,7 @@
 }
 
 .linkText {
-  font-size: 24px;
+  font-size: 32px;
   cursor: pointer;
   transition: 1s linear;
   margin: 0 2vw;
@@ -25,4 +25,13 @@
 
 .linkText:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 425px) {
+  .name {
+    font-size: 32px;
+  }
+  .linkText {
+    font-size: 24px;
+  }
 }
