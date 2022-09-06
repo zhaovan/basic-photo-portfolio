@@ -4,13 +4,16 @@ import { useState, useCallback, useEffect } from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { filterOptions } from "../FilterOptions";
 import styles from "../../styles/PhotoGallery.module.css";
-
-function convertTitleCase(word) {
-  return word[0].toUpperCase() + word.slice(1).toLowerCase();
-}
+import Tooltip from "../Tooltip/tooltip";
 
 export default function PhotoGallery({ photos }) {
   const [filteredPhotos, setFilteredPhotos] = useState([]);
+
+  // Info around tooltips
+  const [tooltipLocation, setTooltipLocation] = useState({ x: 0, y: 0 });
+  const [showtooltip, setShowTooltip] = useState(false);
+  const [tooltipInfo, setTooltipInfo] = useState("");
+
   const [filters, setFilters] = useState([]);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -56,21 +59,38 @@ export default function PhotoGallery({ photos }) {
       <div>
         <h3 className={styles.filterTag}>Filter:</h3>
         <div className={styles.filterContainer}>
+          {showtooltip && (
+            <Tooltip
+              x={tooltipLocation.x}
+              y={tooltipLocation.y}
+              info={tooltipInfo}
+            />
+          )}
           {filterOptions.map((currFilter, i) => {
             return (
-              <button
-                key={i}
-                className={
-                  filters.includes(currFilter)
-                    ? styles.filterButtonActive
-                    : styles.filterButton
-                }
-                onClick={() => {
-                  filter(currFilter);
-                }}
-              >
-                {convertTitleCase(currFilter)}
-              </button>
+              <>
+                <button
+                  key={i}
+                  className={
+                    filters.includes(currFilter.name)
+                      ? styles.filterButtonActive
+                      : styles.filterButton
+                  }
+                  onClick={() => {
+                    filter(currFilter.name);
+                  }}
+                  onMouseEnter={(e) => {
+                    setShowTooltip(true);
+                    setTooltipInfo(currFilter.description);
+                    setTooltipLocation({ x: e.clientX, y: e.clientY });
+                  }}
+                  onMouseLeave={() => {
+                    setShowTooltip(false);
+                  }}
+                >
+                  {currFilter.name}
+                </button>
+              </>
             );
           })}
         </div>

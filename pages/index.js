@@ -1,13 +1,15 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import Header from "../components/Header/Header.js";
 import { photos } from "../components/photos";
 import PhotoGallery from "../components/PhotoGallery/PhotoGallery";
 import About from "../components/About/About";
+import shuffleArray from "../utils/shuffle.js";
 
 export default function Home() {
   const [page, setPage] = useState("photos");
+  shuffleArray(photos);
+
   return (
     <div>
       <Head>
